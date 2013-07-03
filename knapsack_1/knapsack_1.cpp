@@ -21,8 +21,6 @@ int _tmain(int argc, _TCHAR* argv[])
 #else
   ksp solver(input, std::cout);
 #endif
-  //solver.solve();
-
 	return 0;
 }
 
