@@ -3,6 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "prim_algo", "prim_algo\prim_algo.vcxproj", "{E6DCC2A3-58AF-492A-9359-F9326DF56391}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Week_1", "Week_1", "{5A0D5B93-BC14-422B-B05F-7184FF55B3C5}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sheduler_1", "sheduler_1\sheduler_1.vcxproj", "{6A12F27D-2892-43D0-B2D2-C5C97C44613D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sheduler_2", "sheduler_2\sheduler_2.vcxproj", "{E98616E9-807E-4947-B2DF-9674EE001F27}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -13,8 +19,21 @@ Global
 		{E6DCC2A3-58AF-492A-9359-F9326DF56391}.Debug|Win32.Build.0 = Debug|Win32
 		{E6DCC2A3-58AF-492A-9359-F9326DF56391}.Release|Win32.ActiveCfg = Release|Win32
 		{E6DCC2A3-58AF-492A-9359-F9326DF56391}.Release|Win32.Build.0 = Release|Win32
+		{6A12F27D-2892-43D0-B2D2-C5C97C44613D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6A12F27D-2892-43D0-B2D2-C5C97C44613D}.Debug|Win32.Build.0 = Debug|Win32
+		{6A12F27D-2892-43D0-B2D2-C5C97C44613D}.Release|Win32.ActiveCfg = Release|Win32
+		{6A12F27D-2892-43D0-B2D2-C5C97C44613D}.Release|Win32.Build.0 = Release|Win32
+		{E98616E9-807E-4947-B2DF-9674EE001F27}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E98616E9-807E-4947-B2DF-9674EE001F27}.Debug|Win32.Build.0 = Debug|Win32
+		{E98616E9-807E-4947-B2DF-9674EE001F27}.Release|Win32.ActiveCfg = Release|Win32
+		{E98616E9-807E-4947-B2DF-9674EE001F27}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E6DCC2A3-58AF-492A-9359-F9326DF56391} = {5A0D5B93-BC14-422B-B05F-7184FF55B3C5}
+		{6A12F27D-2892-43D0-B2D2-C5C97C44613D} = {5A0D5B93-BC14-422B-B05F-7184FF55B3C5}
+		{E98616E9-807E-4947-B2DF-9674EE001F27} = {5A0D5B93-BC14-422B-B05F-7184FF55B3C5}
 	EndGlobalSection
 EndGlobal

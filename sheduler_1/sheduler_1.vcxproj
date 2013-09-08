@@ -11,9 +11,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{E6DCC2A3-58AF-492A-9359-F9326DF56391}</ProjectGuid>
+    <ProjectGuid>{6A12F27D-2892-43D0-B2D2-C5C97C44613D}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>prim_algo</RootNamespace>
+    <RootNamespace>sheduler_1</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -78,10 +78,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="prim_algo.cpp" />
+    <ClCompile Include="weighted_completion_times_1.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="edges.txt" />
+    <Text Include="..\jobs.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
