@@ -6,7 +6,7 @@
 #include <vector>
 #include <algorithm>
 #include <iterator>
-#include <set>
+#include <functional>
 
 class mst_solver
 {
@@ -46,7 +46,7 @@ public:
 
    typedef std::vector<edge_from_file>  mst_adopted;;
    typedef std::vector<std::vector<edge> > adjucent_list;
-   typedef std::multiset<edge> minimal_weight_edges;
+   typedef std::vector<edge> minimal_weight_edges;
    typedef std::vector<bool>  node_set;
     
    int m_nodes_nbr;
@@ -71,6 +71,10 @@ bool operator< (const mst_solver::edge & lhs, const mst_solver::edge & rhs)
 	return lhs.weight < rhs.weight;
 }
 
+bool operator> (const mst_solver::edge & lhs, const mst_solver::edge & rhs)
+{
+	return  lhs.weight > rhs.weight;
+}
 struct edge_adder
 {
   edge_adder(mst_solver::adjucent_list& graph, mst_solver::edge_from_file& min_edge)
@@ -112,20 +116,33 @@ long long mst_solver::solve()
 		{
 			
 			if(m_unhandled_nodes[data.node]) 
-				m_min_edges.insert(data);
+			{
+				m_min_edges.push_back(data);
+				std::push_heap(m_min_edges.begin(), m_min_edges.end(), std::greater<edge>());
+			}
 		}
 
 		m_unhandled_nodes[current_node] = false;
 
-		while(!m_min_edges.empty() && !m_unhandled_nodes[m_min_edges.begin()->node])
-			m_min_edges.erase(m_min_edges.begin());
-
-		if(!m_min_edges.empty())
+		edge min_edge;
+		bool min_edge_found = false;
+		while(!m_min_edges.empty())
 		{
-			current_node = m_min_edges.begin()->node;	
-			int edge_len = m_min_edges.begin()->weight;
+				pop_heap(m_min_edges.begin(), m_min_edges.end(), std::greater<edge>());
+				min_edge = m_min_edges.back();
+				m_min_edges.pop_back();
+				if(m_unhandled_nodes[min_edge.node])
+				{
+					min_edge_found=true;
+					break;
+				}
+		}
+
+		if(min_edge_found)
+		{
+			current_node = min_edge.node;	
+			int edge_len = min_edge.weight;
 			mst_len += edge_len;
-			m_min_edges.erase(m_min_edges.begin());
 		}
 	}
 	return mst_len;
